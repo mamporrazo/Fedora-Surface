@@ -1,0 +1,11 @@
+[Unit]
+Description=Nvidia GPU initialization
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dgpu.sh
+ExecStartPre=/bin/sleep 5
+
+[Install]
+WantedBy=multi-user.target
